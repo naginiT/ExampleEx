@@ -12,7 +12,7 @@ public class Ex {
 		driver.get("https://www.w3schools.com/");
 		driver.manage().window().maximize();
 		driver.findElement(By.xpath("/html/body/div[7]/div[1]/div[1]/a[1]")).click();
-		System.out.println("click");
+		System.out.println("clicked");
 	}
 
 }
