@@ -77,7 +77,8 @@ public class crudoperations
         while(rs.next()){
         	hs.add(rs.getString("username"));
         }
-        if(hs.contains(username)){
+        if(hs.contains(username))
+        {
         	System.out.println("Record Found::::");
         	System.out.println("Enter the Details to Update:::::");
         	System.out.println("Enter the PassWord:::::::");

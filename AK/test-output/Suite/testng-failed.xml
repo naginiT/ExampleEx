@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="usr" value="seelamanilkumar95"/>
+  <parameter name="pwd" value="Ak/naidu/77300#"/>
+  <test name="Test(failed)" parallel="true">
+    <parameter name="usr" value="seelamanilkumar95"/>
+    <parameter name="pwd" value="Ak/naidu/77300#"/>
+    <classes>
+      <class name="selenium.CrossTesting">
+        <methods>
+          <include name="login"/>
+        </methods>
+      </class> <!-- selenium.CrossTesting -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -1,0 +1,125 @@
+1...
+
+package keyWordFramewrorkpac;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Properties;
+
+public class facebook
+{
+
+	public Properties getvaluepro() throws Exception
+	{
+		Properties prop=new Properties();
+		FileInputStream fs=new FileInputStream("./KeyWordDrivenProject/keyword.properties");
+		prop.load(fs);
+		return prop;
+		
+		
+	}
+	
+}
+
+
+2....
+
+package keyWordFramewrorkpac;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelData 
+{
+
+	public XSSFSheet dataretrieve(String Filepath,String SheetName) throws Exception
+	{
+		        FileInputStream fis=new FileInputStream(Filepath);
+				XSSFWorkbook wb=new XSSFWorkbook(fis);
+				XSSFSheet xs=wb.getSheet(SheetName);
+				return xs;
+				
+	}
+}
+
+
+3....
+
+package keyWordFramewrorkpac;
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+
+public class CompareExcel extends Invoke
+{
+public void compare(Properties prop, String operations, String locator, String value) 
+{
+	if(operations.equalsIgnoreCase("OpenURL"))
+	{
+		driver.get(prop.getProperty(value));
+	}
+	
+	else if (operations.equalsIgnoreCase("EnterUserName"))
+	{
+		driver.findElement(By.xpath(prop.getProperty(locator))).sendKeys(value);
+	}
+	
+	else if (operations.equalsIgnoreCase("EnterPassword"))
+			{
+
+		driver.findElement(By.xpath(prop.getProperty(locator))).sendKeys(value);
+			}
+}
+}
+
+4....
+
+package keyWordFramewrorkpac;
+
+import java.util.Properties;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class Invoke 
+{
+	
+	public WebDriver driver;
+	@Test
+	public void invok() throws Exception
+	{
+	  System.setProperty("webdriver.chrome.driver","D:\\selenium\\jars\\chromedriver.exe");
+	  driver = new ChromeDriver();
+	  driver.manage().window().maximize();
+	  CompareExcel cp=new CompareExcel();
+	  ExcelData ed=new ExcelData();
+	  facebook fc=new facebook();
+	  //cp.compare(prop, operations, locator, value);
+	  Properties p=fc.getvaluepro();
+      XSSFSheet xf=ed.dataretrieve("C:\\Users\\hai\\Desktop\\keyword.xlss.xlsx", "Sheet1");
+     //xf.getRow();
+      for(int i=0;i<=xf.getLastRowNum();i++)
+      {
+    	cp.compare(p, xf.getRow(i).getCell(0).getStringCellValue(),xf.getRow(i).getCell(1).getStringCellValue(), xf.getRow(i).getCell(2).getStringCellValue());
+      }
+     
+	  
+}
+}
+
+
+
+5....
+
+url=https://www.facebook.com/
+username=//*[@id="email"]
+pwd=//*[@id="pass"]
+
+

