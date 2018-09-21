@@ -16,6 +16,9 @@ public class Demo
 	driver.get("https://www.facebook.com/");
 	driver.manage().window().maximize();
 System.out.println("RojaPraveen");
+System.out.println("RojaPraveen");
+System.out.println("RojaPraveen");
+System.out.println("RojaPraveen");
 	}
 
 }
