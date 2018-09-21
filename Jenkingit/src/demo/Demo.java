@@ -15,8 +15,7 @@ public class Demo
 	driver.manage().window().maximize();
 	driver.get("https://www.facebook.com/");
 	driver.manage().window().maximize();
-    System.out.println("RojaPraveenr");
-    System.out.println("Rojareddy");
+ 
 	}
 
 }
