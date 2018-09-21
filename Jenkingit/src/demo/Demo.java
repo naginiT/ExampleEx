@@ -17,8 +17,7 @@ public class Demo
 	driver.manage().window().maximize();
 System.out.println("RojaPraveen");
 System.out.println("RojaPraveen");
-System.out.println("RojaPraveen");
-System.out.println("RojaPraveen");
+
 	}
 
 }
